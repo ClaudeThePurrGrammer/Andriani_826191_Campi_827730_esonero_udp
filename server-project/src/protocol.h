@@ -14,8 +14,8 @@
 
 // Codici di stato della risposta
 #define STATUS_SUCCESS            0
-#define STATUS_CITY_NOT_AVAILABLE 1
-#define STATUS_INVALID_REQUEST    2
+#define STATUS_CITY_NOT_AVAILABLE 2
+#define STATUS_INVALID_REQUEST    1
 
 // Struttura richiesta (Client → Server)
 typedef struct {
