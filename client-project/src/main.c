@@ -188,17 +188,29 @@ int main(int argc, char *argv[]) {
     char host[256], ipstr[256];
     resolve_server_name(&sad, host, sizeof(host), ipstr, sizeof(ipstr));
 
-    printf("Ricevuto risultato dal server %s (ip %s). ", host, ipstr);
+
 
     if (weather_response.status == STATUS_SUCCESS) {
         if (weather_response.type == 't')
+        {
+        	printf("Ricevuto risultato dal server %s (ip %s). ", host, ipstr);
             printf("%s: Temperatura = %.1f°C\n", weather_request.city, weather_response.value);
+        }
         else if (weather_response.type == 'h')
+        {
+        	printf("Ricevuto risultato dal server %s (ip %s). ", host, ipstr);
             printf("%s: Umidità = %.1f%%\n", weather_request.city, weather_response.value);
+        }
         else if (weather_response.type == 'w')
+        {
+        	printf("Ricevuto risultato dal server %s (ip %s). ", host, ipstr);
             printf("%s: Vento = %.1f km/h\n", weather_request.city, weather_response.value);
+        }
         else if (weather_response.type == 'p')
+        {
+        	printf("Ricevuto risultato dal server %s (ip %s). ", host, ipstr);
             printf("%s: Pressione = %.1f hPa\n", weather_request.city, weather_response.value);
+        }
     } else if (weather_response.status == STATUS_CITY_NOT_AVAILABLE) {
         printf("Città non disponibile\n");
     } else if (weather_response.status == STATUS_INVALID_REQUEST) {
