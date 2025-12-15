@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>   // strcmp, memset, memcpy
-#include <ctype.h>    // isalpha
+#include <ctype.h>    // isalnum
 
 #if defined WIN32
 #include <winsock2.h>
@@ -166,7 +166,7 @@ int main(int argc, char *argv[]) {
 
         int invalid_char = 0;
         for (int i = 0; req.city[i] != '\0'; i++) {
-            if (req.city[i] == '\t' || (!isalpha((unsigned char)req.city[i]) && req.city[i] != ' ')) {
+            if (req.city[i] == '\t' || (!isalnum((unsigned char)req.city[i]) && req.city[i] != ' ')) {
                 invalid_char = 1;
                 break;
             }
